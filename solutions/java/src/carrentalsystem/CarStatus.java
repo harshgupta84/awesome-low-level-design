@@ -1,5 +1,8 @@
 package carrentalsystem;
 
 public enum CarStatus {
-    AVAILABLE, BOOKED, MAINTENANCE
+    AVAILABLE,
+    RESERVED,
+    RENTED,
+    OUT_OF_SERVICE
 }

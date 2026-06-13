@@ -1,5 +1,7 @@
 package carrentalsystem;
 
 public enum CarType {
-    SUV, SEDAN, HATCHBACK
+    SUV,
+    SEDAN,
+    HATCHBACK
 }

@@ -1,43 +1,59 @@
 package carrentalsystem;
 
 public class Car {
-    private final String make;
+
+    private final String id;
+    private final String brand;
     private final String model;
-    private final int year;
     private final String licensePlate;
     private final double rentalPricePerDay;
-    private boolean available;
+    private final CarType carType;
+    private CarStatus carStatus;
 
-    public Car(String make, String model, int year, String licensePlate, double rentalPricePerDay) {
-        this.make = make;
+    public Car(String id, String brand, String model, String licensePlate,
+               double rentalPricePerDay, CarType carType) {
+        this.id = id;
+        this.brand = brand;
         this.model = model;
-        this.year = year;
         this.licensePlate = licensePlate;
         this.rentalPricePerDay = rentalPricePerDay;
-        this.available = true;
+        this.carType = carType;
+        this.carStatus = CarStatus.AVAILABLE;
     }
 
-    public double getRentalPricePerDay() {
-        return rentalPricePerDay;
+    public String getId() {
+        return id;
     }
 
-    public String getLicensePlate() {
-        return licensePlate;
-    }
-
-    public String getMake() {
-        return make;
+    public String getBrand() {
+        return brand;
     }
 
     public String getModel() {
         return model;
     }
 
-    public boolean isAvailable() {
-        return available;
+    public String getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public double getRentalPricePerDay() {
+        return rentalPricePerDay;
+    }
+
+    public CarType getCarType() {
+        return carType;
+    }
+
+    public CarStatus getCarStatus() {
+        return carStatus;
+    }
+
+    public void setCarStatus(CarStatus carStatus) {
+        this.carStatus = carStatus;
+    }
+
+    public boolean isAvailable() {
+        return carStatus == CarStatus.AVAILABLE;
     }
 }
